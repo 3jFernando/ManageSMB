@@ -1,0 +1,51 @@
+/* body */
+
+body {
+    position: relative;
+    height: 97vh;
+    overflow: hidden;
+}
+
+
+/* Contenido */
+
+#navbarText span,
+#navbarText span>i {
+    cursor: pointer;
+    color: red;
+}
+
+.main {
+    height: 81vh;
+    overflow: auto;
+    margin: 0 !important;
+    padding: 21pt;
+}
+
+.tabla-folders tbody>tr>td>a {
+    color: black;
+    text-decoration: none;
+}
+
+.tabla-folders tbody>tr>td>a:hover {
+    color: #0d6efd;
+    cursor: pointer;
+}
+
+.breadcrumb-item-subs {
+    color: grey;
+}
+
+
+/* footer */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 6px 15pt;
+    background: whitesmoke;
+}
