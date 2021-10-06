@@ -22,7 +22,6 @@ try {
 		echo $file->getName() . "\n";
 	}
 
-
 	echo "Conectado";
 	
 } catch (\Throwable $th) {

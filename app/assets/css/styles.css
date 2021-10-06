@@ -1,13 +1,50 @@
 /* body */
 
-body {
+.body-manage-files{
     position: relative;
     height: 97vh;
     overflow: hidden;
 }
 
+small{
+    color: #7c7c7c;
+}
+
+.table tbody>tr>td,
+.table thead>tr>th{
+    font-size: 13px !important;
+    border: 0px !important;
+}
+
+.table tbody>tr>td>button>i{
+    font-size: 22px !important;
+}
+
+/* login */
+.body-login{
+    height: 100vh;
+    overflow: auto;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtYPL_Qu0d0kaLWVgHCdb4bqakTSxPROPZK2JgX86F25nncjeaDLcNn2La6hU-l1x8MjA&usqp=CAU');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: bottom;
+    background-size: 300px;
+}
 
 /* Contenido */
+
+.breadcrumb-nav-routes{
+    position: absolute;
+    bottom: 11px;
+    right: 0;
+    height: 35px;
+}
+
+.breadcrumb-nav-routes .breadcrumb{
+    padding: 4px 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
 
 #navbarText span,
 #navbarText span>i {
@@ -15,11 +52,19 @@ body {
     color: red;
 }
 
+.shadow-sm{
+    box-shadow: 0 7px 14px -3px rgb(203 203 203) !important;
+}
+
+.b-0{
+    border: 0px !important;
+}
+
 .main {
     height: 81vh;
     overflow: auto;
     margin: 0 !important;
-    padding: 21pt;
+    padding: 7pt 11pt;
 }
 
 .tabla-folders tbody>tr>td>a {
