@@ -2,12 +2,12 @@
 
 $paths = $_POST['downloadFiles'];
 // Requiere dar permisos en la carpeta (Crear y eliminar archivos)
-$uploads_dir = dirname(dirname(__FILE__)).'/assets/temp/';
+$uploads_temp = dirname(dirname(__FILE__)).'/assets/temp/';
 
 if(isset($paths)){
     foreach ($paths as $keyPath){
         $fileName = basename($keyPath);
-        exec("cd $uploads_dir && smbclient '//$host/$folderRoot/' -U '$user%$password' -D '$changeFolder' -c 'get \"$fileName\"'");
+        exec("cd $uploads_temp && smbclient '//$host/$folderRoot/' -U '$user%$password' -D '$changeFolder' -c 'get \"$fileName\"'");
         // echo "Completed";
     }
 
@@ -17,7 +17,7 @@ if(isset($paths)){
 
     // Comprobar archivo zip temporal
     if ($zip->open($zipName, ZIPARCHIVE::CREATE | ZipArchive::OVERWRITE)==TRUE){
-        foreach(glob($uploads_dir . '/*') as $file) {
+        foreach(glob($uploads_temp . '/*') as $file) {
             $zip->addFile($file, basename($file));
         }
         $zip->close();
@@ -31,12 +31,11 @@ if(isset($paths)){
         ob_clean();
         readfile($zipName);
 
-        //$newAlert = true;
-        //$newAlertMessage = 'Se descargaron los archivos seleccionados con exito "'.$zipName.'"';
         } else {
-        echo 'Failed to create to zip. Error';
+        $newAlertDanger = true;
+        $newAlertMessage = 'Error. No se pudo crear archivo para comprimir.';
     }
     // Elimina todos los archivos temporales
-    exec('rm -f -r '. $uploads_dir .'*');
+    exec('rm -f -r '. $uploads_temp .'*');
     (is_file($zipName)) ? unlink($zipName) : null;
 }

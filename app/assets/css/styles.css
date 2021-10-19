@@ -156,3 +156,14 @@ div#alertFolderId {
         transform:  translate(0px,0px)  ;
     }
 }
+
+.b-0.card.card-body {
+    z-index: 2;
+}
+
+.btn-hidden { 
+    border: 0;
+    background: transparent;
+    font-size: 13px;
+    margin-left: 5px;
+}

@@ -10,5 +10,9 @@ $cantFolders = 0;
 $cantFiles = 0;
 
 // Mensajes de notificaciòn
-$newAlert = false;
+$newAlertSuccess = false;
+$newAlertDanger = false;
 $newAlertMessage = '';
+
+$fileDownloaded = false;
+$fileDownloadedMessage = '';

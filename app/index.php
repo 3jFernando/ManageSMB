@@ -27,7 +27,7 @@
 
         // modals
         include('./src/components/modals.php');
-        //include('./src/components/alerts.php');
+        include('./src/components/alerts.php');
 
         $authenticateForm = '
             <input type="hidden" name="user" value="'.$_COOKIE['User'].'"/>
@@ -42,6 +42,7 @@
         <?php 
             modalFolderNew("newModalFolder", "Nueva Carpeta", $inputNewFolder, "Crear", $changeFolder);
             modalFolderNew("newModalFiles", "Subir Nuevo Archivo", $inputNewFile, "Subir", $changeFolder); 
+            modalFolderNew("newModalUpload", "Subir Nuevos Archivos", $inputNewUploads, "Subir", $changeFolder); 
         ?>
  
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,9 +82,9 @@
                         ?>
                     </li>
                     <li class="nav-item pr-1">
-                        <button class="btn btn-light">
+                        <a class="btn btn-light" data-toggle="modal" data-target="#newModalUpload">
                             <i class="fas fa-upload"></i>
-                        </button>
+                        </a>
                     </li>
                     <li class="nav-item pr-4">
                         <button class="btn btn-light">
@@ -106,13 +107,12 @@
 
         <section>
             <main class="main">
-                <?php if($newAlert){
-                        echo '
-                        <div id="alertFolderId" class="alert alert-success" role="alert">
-                            <i class="fas fa-check-circle pr-3"></i>'.$newAlertMessage.'
-                        </div>
-                        ';
-                    }  
+                <?php 
+                    if($newAlertSuccess){
+                        notificationAlert("alert-success", $alertIconCheck, $newAlertMessage);
+                    } else if($newAlertDanger) {
+                        notificationAlert("alert-danger", $alertIconDanger, $newAlertMessage);
+                    }
                 ?>
                     
                 <div class="d-flex justify-content-between align-items-center mb-2"> 
@@ -155,7 +155,7 @@
                                     echo '
                                     <form action="index.php" method="post">
                                         '.$authenticateForm.'
-                                        <button style="border: 0;background: transparent;font-size: 16px;margin-left: 0.5rem;" type="submit"><i class="fas fa-home"></i> > Inicio</button>
+                                        <button class="btn-hidden" type="submit"><i class="fas fa-home"></i> > Inicio</button>
                                     </form>
                                     ';
                                 ?>
@@ -196,9 +196,10 @@
                                         <form action="index.php" method="post">
                                             <input type="hidden" name="downloadFIle" value="SI"/>
                                             '.$authenticateForm.'
+                                            <input type="hidden" name="changeFolder" value="'.$changeFolder.'"/>
                                             <input type="hidden" name="downloadFileTarget" value="'.$changeFolder.'/'.$file['title'].'"/>
                                             <input type="hidden" name="downloadFileTargetTitle" value="'.$file['title'].'"/>
-                                            <button style="border: 0;background: transparent; "type="submit">'.$icon.$file['title'].'</button>
+                                            <button class="btn-hidden" "type="submit">'.$icon.$file['title'].'</button>
                                         </form>';
 
                                         if($file['type'] == "CARPETA") {
@@ -210,7 +211,7 @@
                                             <input type="hidden" name="downloadFIle" value="NO"/>
                                                 '.$authenticateForm.'
                                                 <input type="hidden" name="changeFolder" value="'.$changeFolder.'/'.$file['title'].'"/>
-                                                <button style="border: 0;background: transparent; "type="submit">'.$icon.$file['title'].'</button>
+                                                <button class="btn-hidden" "type="submit">'.$icon.$file['title'].'</button>
                                             </form>
                                             ';
                                         } 

@@ -21,7 +21,7 @@ window.onload = function() {
         setTimeout(function(){ 
             let mainAlert = alert.parentNode;
             mainAlert.removeChild(alert);
-        }, 5000);
+        }, 6000);
     }
 }
 // Borra las variables creadas en local
@@ -45,11 +45,9 @@ function onToggle(checkbox) {
         let parent = document.getElementById("selectedFileList");
         parent.appendChild(input);
 
-        console.log('checked');
     } else {     
         let removeSelected = document.getElementById(checkbox['id']);
         removeSelected.remove();
 
-        console.log('unchecked');
     }
 }

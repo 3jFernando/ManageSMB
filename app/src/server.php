@@ -6,6 +6,7 @@ include('./controllers/newFolder.php');
 include('./controllers/uploadFile.php');
 include('./controllers/downloadFile.php');
 include('./controllers/downloadMultipleFiles.php');
+include('./controllers/uploadMultipleFiles.php');
 
 try {
 

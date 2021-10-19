@@ -4,6 +4,7 @@ $modalViewFileTitle = "Detalles del archivo";
 $modalViewFileTitleSubtitle = "No definido ---";
 $inputNewFolder = '<input type="text" class="form-control" name="newFolder" required>';
 $inputNewFile = '<input type="file" name="fileToUpload" required>';
+$inputNewUploads = '<input type="file" class="form-control" id="multipleFiles[]" name="multipleFiles[]" multiple="">';
 
 $modalViewFile = '
 <!-- Modal -->
