@@ -114,6 +114,7 @@ small {
     line-height: 52px;
     text-align: left;
 }
+
 .sidebar ul li {
     width: 100%;
     padding: 10px;
@@ -134,18 +135,26 @@ small {
     color: #212529;
     font-size: .875rem;
 }
+
 input[type="file"]{
     font-size: 12px;
 }
+
+input[type=checkbox] {
+    cursor: pointer;
+}
+
 .nav li:hover {
     background-color: rgba(0,0,0,.075);
 }
+
 div#alertFolderId {
     position: absolute;
     bottom: 1.5rem;
     width: 60%;
     animation: slide-up-fade-in ease 1s;
 }
+
 @keyframes slide-up-fade-in{
     0% {
         opacity:0;
@@ -161,9 +170,45 @@ div#alertFolderId {
     z-index: 2;
 }
 
-.btn-hidden { 
+.btn-hidden, .btn-home { 
     border: 0;
     background: transparent;
     font-size: 13px;
     margin-left: 5px;
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+@media (max-width: 1182px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 912px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.wrapper-child {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.folfer-icon {
+    display: flex!important;
+    font-size: 3rem;
+    justify-content: center;
+}
+
+.files-width{
+    width: 11rem;
+}
+
+.hidden-visual {
+    display: none!important;
+}
+

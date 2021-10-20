@@ -4,6 +4,7 @@ $multipleFiles = $_FILES["multipleFiles"];
 $uploads_temp = dirname(dirname(__FILE__)).'/assets/temp/';
 
 if(isset($multipleFiles)) {
+    // Extraer todos los valores del array de elementos
     foreach($multipleFiles['tmp_name'] as $key => $tmp_name) {
         $fileName = $multipleFiles['name'][$key];
         $source = $multipleFiles["tmp_name"][$key];

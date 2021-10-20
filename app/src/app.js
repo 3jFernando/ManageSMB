@@ -51,3 +51,28 @@ function onToggle(checkbox) {
 
     }
 }
+
+$(document).ready(function(){
+    document.querySelector("#btn-grid").onclick = () => {
+        $("tbody").toggleClass("wrapper");
+        $("thead").toggleClass("hidden-visual");
+        $(".fa-list-ul").toggleClass("hidden-visual");
+        $(".fa-grip-horizontal").toggleClass("hidden-visual");
+
+        document.querySelectorAll("tr").forEach((e) =>{
+            e.classList.toggle("wrapper-child");
+        })
+        document.querySelectorAll("i.fas.fa-folder.text-success").forEach((e) => {
+            e.classList.toggle("folfer-icon");
+        })
+        document.querySelectorAll("i.fas.fa-file.text-warning").forEach((e) => {
+            e.classList.toggle("folfer-icon");
+        })
+        document.querySelectorAll(".hiddenGrid").forEach((e) => {
+            e.classList.toggle("hidden-visual");
+        })    
+        document.querySelectorAll("button.btn-hidden").forEach((e) => {
+            e.classList.toggle("files-width");
+        })
+    };
+});

@@ -64,8 +64,9 @@
                 </ul>
                 <ul class="navbar-nav flex-row">
                     <li class="nav-item pr-1">
-                        <button class="btn btn-light">
+                        <button class="btn btn-light" id="btn-grid">
                             <i class="fas fa-grip-horizontal"></i>
+                            <i class="fas fa-list-ul hidden-visual"></i>
                         </button>
                     </li>
                     <li class="nav-item pr-1">
@@ -155,7 +156,7 @@
                                     echo '
                                     <form action="index.php" method="post">
                                         '.$authenticateForm.'
-                                        <button class="btn-hidden" type="submit"><i class="fas fa-home"></i> > Inicio</button>
+                                        <button class="btn-home" type="submit"><i class="fas fa-home"></i> > Inicio</button>
                                     </form>
                                     ';
                                 ?>
@@ -224,8 +225,8 @@
                                             <tr class="'.$classType.'">                                 
                                                 <td>'.$checkboxFiles.'</td>
                                                 <td>'.$btnOpenFolder.'</td>
-                                                <td>'.$file['type'].'</td>
-                                                <td>'.$weight.'</td>
+                                                <td class="hiddenGrid">'.$file['type'].'</td>
+                                                <td class="hiddenGrid">'.$weight.'</td>
                                             </tr>    
                                         ';                 
                                     }

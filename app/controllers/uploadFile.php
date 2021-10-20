@@ -8,6 +8,7 @@ $uploads_dir = dirname(dirname(__FILE__)).'/assets/files/';
 $fileTemp = $uploads_dir . $fileToUpload;
 
 if(isset($_FILES["fileToUpload"])){
+    // Mueve el archivo subido a una nueva ubicación (files)
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $fileTemp)) {
         exec("cd $uploads_dir && smbclient '//$host/$folderRoot/' -U '$user%$password' -D '$changeFolder' -c 'put \"$fileToUpload\"'", $output, $return);
         
