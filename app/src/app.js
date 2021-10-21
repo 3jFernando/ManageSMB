@@ -45,6 +45,20 @@ function onToggle(checkbox) {
         let parent = document.getElementById("selectedFileList");
         parent.appendChild(input);
 
+        let inputInfo = document.createElement("input");
+        inputInfo.setAttribute('type', 'hidden');
+        inputInfo.setAttribute('name', 'fileNameInfo');
+        inputInfo.setAttribute('value', checkbox['id']);
+
+        let parentInfo = document.getElementById("selectedFileInfo");
+        
+        if($('#selectedFileInfo').find("input").length){
+            parentInfo.removeChild(parentInfo.childNodes[0]);
+            parentInfo.appendChild(inputInfo);        
+        }else{
+            parentInfo.appendChild(inputInfo);
+        }
+
     } else {     
         let removeSelected = document.getElementById(checkbox['id']);
         removeSelected.remove();
