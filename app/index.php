@@ -88,17 +88,15 @@
                         </a>
                     </li>
                     <li class="nav-item pr-4">
-                       <!--  <?php
+                        <?php
                             echo'
                             <form action="index.php" method="post">   
                                 '.$authenticateForm.'
                                 <input type="hidden" name="fileInfo" value="true"/>
                                 <div id="selectedFileInfo"></div>
-                                <button class="btn btn-light">
-                                    <i class="fas fa-info-circle"></i>
-                                </button>
+                                
                             </fom>';
-                        ?> -->
+                        ?>
                     </li>
                 </ul>
                 <a href="/SMB" onclick="cleanerStorage();"><span class="navbar-text text-danger">Salir <i class="fa fa-arrow-right"></i></span></a>
@@ -126,20 +124,18 @@
                     
                 <div class="d-flex justify-content-between align-items-center mb-2"> 
 
-                    <!-- <?php
+                    <?php
                      // Comprobar de otra forma
                         if(isset($changeFolder)) {
                         echo '<form action="index.php" method="post">
                                 '.$authenticateForm.'
                                 <input type="hidden" name="backFolder" value="'.$backFolder.'"/>
-                                <button type="submit" class="btn btn-sm btn-outline-light text-dark">
-                                    <i class="fa fa-chevron-left mr-2"></i> Regresar
-                                </button>
+                                <div></div>
                             </form>';
                         } else {
                             echo '<div></div>';
                         }
-                    ?> -->
+                    ?>
 
                     <div class="d-flex justify-content-end align-items-center">
                         <button type="button" class="btn btn-sm btn-light">
